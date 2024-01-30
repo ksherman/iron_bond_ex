@@ -13,8 +13,7 @@ defmodule IronBond.UsersFixtures do
       |> Enum.into(%{
         first: "some first",
         last: "some last",
-        phone: 42,
-        session_token: "some session_token"
+        phone: 224_730_2083
       })
       |> IronBond.Users.create_user()
 

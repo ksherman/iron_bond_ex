@@ -6,7 +6,7 @@ defmodule IronBond.Users do
   import Ecto.Query, warn: false
   alias IronBond.Repo
 
-  alias IronBond.Users.User
+  alias IronBond.Data.User
 
   @doc """
   Returns the list of users.

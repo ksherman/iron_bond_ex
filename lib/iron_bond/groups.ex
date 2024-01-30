@@ -6,7 +6,7 @@ defmodule IronBond.Groups do
   import Ecto.Query, warn: false
   alias IronBond.Repo
 
-  alias IronBond.Groups.Group
+  alias IronBond.Data.Group
 
   @doc """
   Returns the list of groups.

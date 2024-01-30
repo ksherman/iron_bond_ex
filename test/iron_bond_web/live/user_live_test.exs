@@ -4,9 +4,9 @@ defmodule IronBondWeb.UserLiveTest do
   import Phoenix.LiveViewTest
   import IronBond.UsersFixtures
 
-  @create_attrs %{first: "some first", last: "some last", phone: 42, session_token: "some session_token"}
-  @update_attrs %{first: "some updated first", last: "some updated last", phone: 43, session_token: "some updated session_token"}
-  @invalid_attrs %{first: nil, last: nil, phone: nil, session_token: nil}
+  @create_attrs %{first: "some first", last: "some last", phone: 42}
+  @update_attrs %{first: "some updated first", last: "some updated last", phone: 43}
+  @invalid_attrs %{first: nil, last: nil, phone: nil}
 
   defp create_user(_) do
     user = user_fixture()

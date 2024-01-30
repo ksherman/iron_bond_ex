@@ -8,7 +8,6 @@ defmodule IronBond.Users.User do
     field :first, :string
     field :last, :string
     field :phone, :integer
-    field :session_token, :string
 
     timestamps(type: :utc_datetime)
   end
@@ -16,7 +15,7 @@ defmodule IronBond.Users.User do
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:first, :last, :phone, :session_token])
-    |> validate_required([:first, :last, :phone, :session_token])
+    |> cast(attrs, [:first, :last, :phone])
+    |> validate_required([:first, :last, :phone])
   end
 end

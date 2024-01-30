@@ -1,0 +1,36 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:15.2
+    container_name: iron-bond-db
+    volumes:
+      - pgdata:/usr/share/iron-bond/postgres/data
+    ports:
+      - 8006:5432
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGPASSWORD=postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+  app:
+    image: iron-bond:compose
+    profiles: ["app"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        port: 4000
+    ports:
+      - 4000:4000
+volumes:
+  pgdata:
+    driver: local

@@ -22,7 +22,6 @@ defmodule IronBondWeb.UserLive.FormComponent do
         <.input field={@form[:first]} type="text" label="First" />
         <.input field={@form[:last]} type="text" label="Last" />
         <.input field={@form[:phone]} type="number" label="Phone" />
-        <.input field={@form[:session_token]} type="text" label="Session token" />
         <:actions>
           <.button phx-disable-with="Saving...">Save User</.button>
         </:actions>

@@ -1,4 +1,7 @@
 defmodule IronBond.UserGroup do
+  @moduledoc """
+  A many-to-many relationship between users and groups.
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -8,14 +11,12 @@ defmodule IronBond.UserGroup do
     field :is_organizer, :boolean, default: false
     field :user_id, :binary_id
     field :group_id, :binary_id
-
-    timestamps(type: :utc_datetime)
   end
 
   @doc false
   def changeset(user_group, attrs) do
     user_group
     |> cast(attrs, [:is_organizer])
-    |> validate_required([:is_organizer])
+    |> validate_required([:user_id, :group_id])
   end
 end
