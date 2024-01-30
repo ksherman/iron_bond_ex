@@ -6,7 +6,7 @@ defmodule IronBond.Repo.Migrations.CreateUsers do
       add :id, :binary_id, primary_key: true
       add :first, :string
       add :last, :string
-      add :phone, :integer
+      add :phone, :string
 
       timestamps(type: :utc_datetime)
     end

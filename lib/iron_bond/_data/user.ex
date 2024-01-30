@@ -1,4 +1,4 @@
-defmodule IronBond.Users.User do
+defmodule IronBond.Data.User do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -7,7 +7,7 @@ defmodule IronBond.Users.User do
   schema "users" do
     field :first, :string
     field :last, :string
-    field :phone, :integer
+    field :phone, :string
 
     timestamps(type: :utc_datetime)
   end

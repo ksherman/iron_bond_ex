@@ -20,6 +20,8 @@ defmodule IronBondWeb.GroupLive.FormComponent do
         phx-submit="save"
       >
         <.input field={@form[:name]} type="text" label="Name" />
+        <.input field={@form[:start_date]} type="date" label="Start challenge on" />
+        <.input field={@form[:end_date]} type="date" label="End challenge on" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Group</.button>
         </:actions>

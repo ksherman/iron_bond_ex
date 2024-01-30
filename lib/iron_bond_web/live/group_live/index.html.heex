@@ -13,6 +13,8 @@
   row_click={fn {_id, group} -> JS.navigate(~p"/groups/#{group}") end}
 >
   <:col :let={{_id, group}} label="Name"><%= group.name %></:col>
+  <:col :let={{_id, group}} label="Start challenge on"><%= group.start_date %></:col>
+  <:col :let={{_id, group}} label="End challenge on"><%= group.end_date %></:col>
   <:action :let={{_id, group}}>
     <div class="sr-only">
       <.link navigate={~p"/groups/#{group}"}>Show</.link>
@@ -29,7 +31,12 @@
   </:action>
 </.table>
 
-<.modal :if={@live_action in [:new, :edit]} id="group-modal" show on_cancel={JS.patch(~p"/groups")}>
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="group-modal"
+  show
+  on_cancel={JS.patch(~p"/groups")}
+>
   <.live_component
     module={IronBondWeb.GroupLive.FormComponent}
     id={@group.id || :new}

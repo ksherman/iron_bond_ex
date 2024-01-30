@@ -4,7 +4,7 @@ defmodule IronBond.GroupsTest do
   alias IronBond.Groups
 
   describe "groups" do
-    alias IronBond.Groups.Group
+    alias IronBond.Data.Group
 
     import IronBond.GroupsFixtures
 

@@ -2,7 +2,7 @@ defmodule IronBondWeb.UserLive.Index do
   use IronBondWeb, :live_view
 
   alias IronBond.Users
-  alias IronBond.Users.User
+  alias IronBond.Data.User
 
   @impl true
   def mount(_params, _session, socket) do

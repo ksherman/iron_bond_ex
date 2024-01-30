@@ -2,7 +2,7 @@ defmodule IronBondWeb.GroupLive.Index do
   use IronBondWeb, :live_view
 
   alias IronBond.Groups
-  alias IronBond.Groups.Group
+  alias IronBond.Data.Group
 
   @impl true
   def mount(_params, _session, socket) do

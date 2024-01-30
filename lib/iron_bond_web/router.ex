@@ -18,6 +18,24 @@ defmodule IronBondWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    scope "/users", UserLive do
+      live "/", Index, :index
+      live "/new", Index, :new
+      live "/:id/edit", Index, :edit
+
+      live "/:id", Show, :show
+      live "/:id/show/edit", Show, :edit
+    end
+
+    scope "/groups", GroupLive do
+      live "/", Index, :index
+      live "/new", Index, :new
+      live "/:id/edit", Index, :edit
+
+      live "/:id", Show, :show
+      live "/:id/show/edit", Show, :edit
+    end
   end
 
   # Other scopes may use custom stacks.
